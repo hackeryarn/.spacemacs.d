@@ -357,7 +357,7 @@ It should only modify the values of Spacemacs settings."
    ;;                       text-mode
    ;;   :size-limit-kb 1000)
    ;; (default nil)
-   dotspacemacs-line-numbers nil
+   dotspacemacs-line-numbers t
 
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
@@ -458,8 +458,8 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
   "Library to load while dumping.
 This function is called only while dumping Spacemacs configuration. You can
 `require' or `load' the libraries of your choice that will be included in the
-dump."
-  )
+dump.")
+  
 
 (defun dotspacemacs/user-config ()
   "Configuration for user code:
@@ -467,12 +467,14 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
+  (add-hook 'text-mode-hook 'turn-on-auto-fill)
+
   ;; Ledger
   (setq ledger-binary-path "hledger")
   (setq ledger-report-auto-width nil
-        ledger-report-use-native-highlighting nil)
+        ledger-report-use-native-highlighting nil))
 
-  )
+  
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
