@@ -1,7 +1,6 @@
 (defconst org-config-packages
-  '(
-    (org :location built-in)
-    ))
+  '((org)
+    (org-brain)))
 
 (defun org-config/post-init-org ()
   ;; Refile
@@ -160,3 +159,6 @@
                                      (org-template-talk)
                                      (org-template-project)
                                      (org-template-tickler)))))
+
+(defun org-config/pre-init-org-brain ()
+  (setq org-brain-path "~/Dropbox/brain"))
