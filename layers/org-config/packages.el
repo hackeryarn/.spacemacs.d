@@ -4,6 +4,7 @@
 
 (defun org-config/post-init-org ()
   ;; Refile
+  (advice-add 'org-agenda-quit :before 'org-save-all-org-buffers)
   (setq org-refile-use-outline-path 'file)
   (setq org-outline-path-complete-in-steps nil)
   (setq org-refile-targets '(("~/Dropbox/gtd/todo.org" :level . 1)
