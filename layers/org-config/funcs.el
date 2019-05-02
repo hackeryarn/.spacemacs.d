@@ -12,9 +12,9 @@
   (defun new-post ()
     "Creates a new post for daily reading notes"
     (interactive)
-    (let* ((old-buffer-name (buffer-name (current-buffer))))
-          (new-file-name (shell-command-to-string
-                          (concat "new-post " old-buffer-name)))
+    (let* ((old-buffer-name (buffer-name (current-buffer)))
+           (new-file-name (shell-command-to-string
+                            (concat "new-post " old-buffer-name))))
       (find-file (string-trim new-file-name))
       (kill-buffer old-buffer-name)
       (goto-char (point-max))
