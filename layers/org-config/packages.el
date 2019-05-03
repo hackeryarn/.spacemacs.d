@@ -161,4 +161,6 @@
                                      (org-template-tickler)))))
 
 (defun org-config/pre-init-org-brain ()
+  (setq org-id-track-globally t)
+  (setq org-id-locations-file "~/Dropbox/brain/.org-id-locations")
   (setq org-brain-path "~/Dropbox/brain"))
