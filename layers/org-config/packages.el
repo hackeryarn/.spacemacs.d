@@ -13,7 +13,8 @@
   (org-babel-do-load-languages
    'org-babel-load-languages
    '(;; other Babel languages
-     (plantuml . t)))
+     (plantuml . t)
+     (shell . t)))
 
   (setq org-plantuml-jar-path
         (expand-file-name "~/.doom.d/scripts/plantuml.jar"))
