@@ -7,7 +7,7 @@
   (defun org-config/open-journal ()
     "Opens my journal file"
     (interactive)
-    (find-file "~/org/journal.org"))
+    (find-file "~/Dropbox/org/journal.org"))
 
   (defun new-post ()
     "Creates a new post for daily reading notes"

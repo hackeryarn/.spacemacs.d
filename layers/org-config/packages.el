@@ -150,7 +150,7 @@
 
   (defun org-template-journal ()
     '("j" "Journal" entry
-      (file+olp+datetree "~/org/journal.org")
+      (file+olp+datetree "~/Dropbox/org/journal.org")
       "* %?" :tree-type week))
 
   (setq org-capture-templates (append

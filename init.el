@@ -57,6 +57,7 @@ This function should only modify configuration layer settings."
      markdown
      html
      dhall
+     elm
 
      emacs-lisp
      clojure
