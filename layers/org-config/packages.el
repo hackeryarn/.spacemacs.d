@@ -143,15 +143,16 @@
       (file "~/Dropbox/gtd/inbox.org")
       "* TODO %i%?"))
 
-  (defun org-template-tickler ()
-    '("T" "Tickler" entry
-      (file "~/Dropbox/gtd/todo.org")
-      "* SCHEDULED %i%? \n DEADLINE:%^{Deadline}t"))
-
   (defun org-template-journal ()
     '("j" "Journal" entry
       (file+olp+datetree "~/Dropbox/org/journal.org")
       "* %?" :tree-type week))
+
+  (defun org-template-task ()
+    '("t" "Task Journal" entry
+      (file+olp+datetree "~/Dropbox/org/task-journal.org")
+      "* %U\n%i%?" :tree-type week))
+  
 
   (setq org-capture-templates (append
                                (mapcar #'create-tag-capture my-gtd-tags)
@@ -159,7 +160,7 @@
                                      (org-template-journal)
                                      (org-template-talk)
                                      (org-template-project)
-                                     (org-template-tickler)))))
+                                     (org-template-task)))))
 
 (defun org-config/pre-init-org-brain ()
   (setq org-id-track-globally t)

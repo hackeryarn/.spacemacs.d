@@ -9,6 +9,11 @@
     (interactive)
     (find-file "~/Dropbox/org/journal.org"))
 
+  (defun org-config/open-task-journal ()
+    "Opens my journal file"
+    (interactive)
+    (find-file "~/Dropbox/org/task-journal.org"))
+
   (defun new-post ()
     "Creates a new post for daily reading notes"
     (interactive)
