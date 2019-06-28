@@ -95,23 +95,15 @@
              (org-agenda-files '("~/Dropbox/gtd/work.org"))))))
 
   (defun create-daily-home-agenda-custom-command ()
-    (list "dh" "Home" (append (create-home-agenda-custom-command 3)
-                              (create-home-task-list))))
+    (list "h" "Home" (append (create-home-agenda-custom-command 3)
+                             (create-home-task-list))))
   (defun create-daily-work-agenda-custom-command ()
-    (list "dw" "Work" (append (create-work-agenda-custom-command 3)
-                              (create-work-task-list))))
-  (defun create-weekly-home-agenda-custom-command ()
-    (list "wh" "Home" (append (create-home-agenda-custom-command 8)
-                              (create-home-task-list))))
-  (defun create-weekly-work-agenda-custom-command ()
-    (list "ww" "Work" (append (create-work-agenda-custom-command 8)
-                              (create-work-task-list))))
+    (list "w" "Work" (append (create-work-agenda-custom-command 3)
+                             (create-work-task-list))))
 
   (defun create-org-agenda-custom-commands ()
     (list (create-daily-home-agenda-custom-command)
-          (create-daily-work-agenda-custom-command)
-          (create-weekly-home-agenda-custom-command)
-          (create-weekly-work-agenda-custom-command)))
+          (create-daily-work-agenda-custom-command)))
 
   ;; Agenda
   (setq org-agenda-prefix-format " %b")
