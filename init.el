@@ -228,8 +228,8 @@ It should only modify the values of Spacemacs settings."
 
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Monoid"
-                               :size 13
+   dotspacemacs-default-font '("Victor Mono"
+                               :size 16
                                :weight normal
                                :width normal)
 
