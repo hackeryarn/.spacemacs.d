@@ -64,8 +64,7 @@ This function should only modify configuration layer settings."
      clojure
      parinfer
 
-     (haskell :variables haskell-enable-hindent t
-              haskell-completion-backend 'intero)
+     (haskell :variables haskell-enable-hindent t)
      scheme
      (javascript :variables javascript-backend 'lsp
                  javascript-fmt-tool 'prettier
