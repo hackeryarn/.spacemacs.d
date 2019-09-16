@@ -62,6 +62,7 @@ This function should only modify configuration layer settings."
 
      emacs-lisp
      clojure
+     common-lisp
      parinfer
 
      (haskell :variables haskell-enable-hindent t)
