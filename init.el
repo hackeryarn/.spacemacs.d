@@ -34,7 +34,9 @@ This function should only modify configuration layer settings."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(sql
-     go
+     (go :variables go-format-before-save t
+         gofm-command "goimports"
+         go-use-golangci-lint t)
      rust
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
@@ -82,8 +84,8 @@ This function should only modify configuration layer settings."
      (java :variables java-backend 'ensime)
      (typescript :variables typescript-fmt-on-save t
                  typescript-fmt-tool 'prettier)
-     terraform
-     )
+     terraform)
+   
 
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
