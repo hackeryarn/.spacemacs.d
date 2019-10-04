@@ -34,8 +34,11 @@ This function should only modify configuration layer settings."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(sql
+     (shell :variables shell-default-shell 'vterm)
      (go :variables go-format-before-save t
+         go-backend 'go-mode
          gofm-command "goimports"
+         go-tab-width 4
          go-use-golangci-lint t)
      rust
      ;; ----------------------------------------------------------------
