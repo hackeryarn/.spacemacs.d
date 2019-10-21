@@ -510,6 +510,12 @@ before packages are loaded."
   ;; System
   (setq create-lockfiles nil)
 
+  ;; Racket
+  (configuration-layer/lazy-install 'racket :extensions '("\\(\\.none\\'\\)" racket-mode))
+  (add-to-list 'auto-mode-alist '("\\.rkt[dl]?\\'" . scheme-mode))
+  (add-to-list 'geiser-implementations-alist
+               '((regexp "\\.rkt[dl]?$") racket))
+
   ;; Writing
   (add-hook 'text-mode-hook 'turn-on-auto-fill)
 
