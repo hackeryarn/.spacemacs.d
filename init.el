@@ -50,7 +50,8 @@ This function should only modify configuration layer settings."
      better-defaults
      git
      ivy
-     (org :variables org-enable-github-support t)
+     (org :variables org-enable-github-support t
+          org-enable-reveal-js-support t)
      org-config
      vue
      spell-checking
@@ -574,5 +575,8 @@ This function is called at the very end of Spacemacs initialization."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(company-tooltip-common
+   ((t (:inherit company-tooltip :weight bold :underline nil))))
+ '(company-tooltip-common-selection
+   ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))
 )
