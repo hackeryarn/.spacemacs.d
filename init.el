@@ -33,14 +33,7 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(sql
-     (shell :variables shell-default-shell 'vterm)
-     (go :variables go-format-before-save t
-         go-backend 'go-mode
-         gofm-command "goimports"
-         go-tab-width 4
-         go-use-golangci-lint t)
-     rust
+   '((shell :variables shell-default-shell 'vterm)
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
@@ -70,19 +63,27 @@ This function should only modify configuration layer settings."
 
      ;; languages
      yaml
+     sql
      markdown
      html
      dhall
      elm
+     (go :variables go-format-before-save t
+         go-backend 'go-mode
+         gofm-command "goimports"
+         go-tab-width 4
+         go-use-golangci-lint t)
+     rust
 
      emacs-lisp
+     racket
      (clojure :variables  clojure-enable-clj-refactor t
               clojure-enable-fancify-symbols t)
+     scheme
      common-lisp
      parinfer
 
      (haskell :variables haskell-enable-hindent t)
-     scheme
      (javascript :variables javascript-backend 'lsp
                  javascript-fmt-tool 'prettier
                  javascript-fmt-on-save t
@@ -96,7 +97,6 @@ This function should only modify configuration layer settings."
      (typescript :variables typescript-fmt-on-save t
                  typescript-fmt-tool 'prettier)
      terraform)
-   
 
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -516,13 +516,6 @@ Put your configuration code here, except for variables that should be set
 before packages are loaded."
   ;; System
   (setq create-lockfiles nil)
-
-  ;; Racket
-  (configuration-layer/lazy-install 'racket :extensions '("\\(\\.none\\'\\)" racket-mode))
-  (add-to-list 'auto-mode-alist '("\\.rkt[dl]?\\'" . scheme-mode))
-  (eval-after-load "geiser-impl"
-    '(add-to-list 'geiser-implementations-alist
-                  '((regexp "\\.rkt[dl]?$") racket)))
 
   ;; Writing
   (add-hook 'text-mode-hook 'turn-on-auto-fill)
